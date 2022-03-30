@@ -1,3 +1,3 @@
 # DSA-New
 
-Practice anb Solved DSA Questions on vaerious topics starting from LinkedList, Array , Stacks, Queues, DP
+Practice anb Solved DSA Questions on various topics starting from LinkedList, Array , Stacks, Queues, DP
