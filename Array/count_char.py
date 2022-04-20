@@ -22,4 +22,4 @@ def count_char_2(input):
     return "".join(ls)
 
 
-print(count_char_2("abcccaad"))
+print(count_char_2("aaabcccaad"))
