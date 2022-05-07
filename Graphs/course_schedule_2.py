@@ -7,16 +7,21 @@ class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
 
         d1 = {}
+        # Form adjacency list
         for i in range(len(prerequisites)):
             d1[prerequisites[i][1]] = d1.get(prerequisites[i][1], []) + [
                 prerequisites[i][0]
             ]
+        # If prerequisites are empty
         if len(d1.keys()) == 0:
             return [x for x in range(numCourses)]
+
+        # Check if cycle present because for topo sort it has to be DAG graph
         res = self.detect_cycle(numCourses, d1)
         if res:
             return []
         else:
+            # Perform Topological sort
             visited = [False] * numCourses
             my_stack = []
             for i in range(numCourses):
