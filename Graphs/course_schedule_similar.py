@@ -61,7 +61,9 @@ def order_courses(prereqs_courses1):
     for val in prereqs_courses1:
         s.add(val[0])
         s.add(val[1])
+
     courses = list(s)
+
     for val in prereqs_courses1:
         adj[val[0]] = adj.get(val[0], []) + [val[1]]
 
