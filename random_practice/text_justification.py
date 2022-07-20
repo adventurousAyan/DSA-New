@@ -35,6 +35,7 @@ class Solution:
                 cur_line = []
                 width = 0
 
+        # For Last word
         res = " ".join(cur_line)
         res += " " * (maxWidth - len(res))
         ls.append(res)
