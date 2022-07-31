@@ -1,50 +1,32 @@
-from queue import PriorityQueue
+import collections
 from typing import List
-
-# https://leetcode.com/problems/sliding-window-maximum/
 
 
 class Solution:
-    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
 
-        lp = 0
-
-        n = len(nums)
-
-        rp = k - 1
-        ls = []
-
-        while lp <= rp and rp < n:
-            q = PriorityQueue()
-            l = lp
-            for i in range(l, l + k):
-                # -1 multiplication is done for max heap as PQ in Python is min heap by default
-                q.put(-1 * nums[i])
-            ls.append(q.get() * -1)
-            lp += 1
-            rp += 1
-        return ls
-
-    ####### Second approach ##############
+    # https://leetcode.com/problems/sliding-window-maximum/
 
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
 
-        lp = 0
-
         n = len(nums)
 
-        rp = k - 1
-        ls = []
+        i, j = 0, 0
 
-        q1 = collections.deque()
-        while lp <= rp and rp < n:
-            maxi = float("-inf")
-            l = lp
-            for i in range(l, l + k):
-                maxi = max(maxi, nums[i])
-                q1.append(nums[i])
-            ls.append(maxi)
-            lp += 1
-            rp += 1
-            q1.popleft()
+        q = collections.deque()
+        ls = []
+        while j < n:
+            while len(q) > 0 and q[-1] < nums[j]:
+                q.pop()
+            q.append(nums[j])
+
+            if j - i + 1 < k:
+                j += 1
+            elif j - i + 1 == k:
+                val = q[0]
+                ls.append(val)
+                if nums[i] == q[0]:
+                    q.popleft()
+
+                i += 1
+                j += 1
         return ls
