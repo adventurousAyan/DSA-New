@@ -1,5 +1,7 @@
 class MyCalendarTwo:
     # https://leetcode.com/problems/my-calendar-ii/
+    # You tube video of line sweep algo with boundary count
+    # https://www.youtube.com/watch?v=ElJdCIhkkZ8
 
     def __init__(self):
         self.d1 = {}
