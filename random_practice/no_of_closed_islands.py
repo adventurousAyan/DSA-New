@@ -33,6 +33,8 @@ class Solution:
                 if is_valid(row, col):
                     dfs(row, col)
 
+        # Initially do DFS of boundary elements if they are 0 as
+        # those will not add to our answer
         for i in range(m):
             for j in [0, n - 1]:
                 if grid[i][j] == 0 and visited[i][j] != 1:
@@ -43,6 +45,7 @@ class Solution:
                 if grid[i][j] == 0 and visited[i][j] != 1:
                     dfs(i, j)
 
+        # Once we cover for all boundary elements, then calculate the no of islands
         for i in range(m):
             for j in range(n):
                 if grid[i][j] == 0 and visited[i][j] != 1:
