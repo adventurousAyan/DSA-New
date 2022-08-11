@@ -25,3 +25,5 @@ class Solution:
                     ans = ss
 
         return ans
+
+    # TC: O(n2) and SC:O(1)

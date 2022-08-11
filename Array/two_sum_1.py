@@ -13,3 +13,5 @@ class Solution:
                 st_dict[val] = index
             else:
                 return [st_dict[tmp], index]
+
+    #SC: O(n) and TC: O(n)
