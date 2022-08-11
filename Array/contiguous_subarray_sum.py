@@ -1,7 +1,7 @@
 from typing import List
 
 # https://leetcode.com/problems/continuous-subarray-sum/
-# https://www.youtube.com/watch?v=QM0klnvTQzk
+# https://www.youtube.com/watch?v=OKcrLfR-8mE
 
 
 class Solution:

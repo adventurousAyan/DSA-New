@@ -9,6 +9,7 @@ class Solution:
 
         n = len(nums)
         d1 = {}
+        # We need to add 0 element because in case the array is 3,2,6, we calculate prefix sum, and substract from k, when value becomes 0, it will look for it in dict
         d1[0] = 1
 
         su = 0

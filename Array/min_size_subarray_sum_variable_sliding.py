@@ -2,6 +2,8 @@ from typing import List
 
 # https://leetcode.com/problems/minimum-size-subarray-sum/
 
+# Variable size sliding window
+
 
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:

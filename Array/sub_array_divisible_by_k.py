@@ -6,6 +6,11 @@ from typing import List
 class Solution:
     def subarraysDivByK(self, nums: List[int], k: int) -> int:
 
+        # If one subarray[0:i]  when dividing by k gives remainder x and the other subarray[0:j] when divided by k yields the same remainder,
+        # then subarray [i:j] would be divisible by k
+        # Ex:- [0:i] = km + x,  [0:j] = k*n + x, therefore [i:j] = k(m-n) which is multiple of k.
+        # This concept would be used in the problem
+
         n = len(nums)
 
         d1 = {}
