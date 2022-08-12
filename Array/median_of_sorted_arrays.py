@@ -1,38 +1,37 @@
-from typing import List
-
-
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+
+        # https://leetcode.com/problems/median-of-two-sorted-arrays/
+
         n1 = len(nums1)
         n2 = len(nums2)
 
-        total = n1 + n2
+        if n1 > n2:
+            return self.findMedianSortedArrays(nums2, nums1)
 
-        half = total // 2
-
-        if n2 < n1:
-            nums1, nums2 = nums2, nums1
+        hf = (n1 + n2 + 1) // 2
 
         low = 0
-        high = len(nums1) - 1
-        while True:
-            cut1 = (low + high) // 2
-            cut2 = half - cut1 - 2
+        high = n1
+        while low <= high:
+            cut1 = low + high >> 1
+            cut2 = hf - cut1
 
-            l1 = nums1[cut1] if cut1 >= 0 else float("-inf")
-            r1 = nums1[cut1 + 1] if (cut1 + 1) < len(nums1) else float("inf")
-            l2 = nums2[cut2] if cut2 >= 0 else float("-inf")
-            r2 = nums2[cut2 + 1] if (cut2 + 1) < len(nums2) else float("inf")
+            l1 = nums1[cut1 - 1] if cut1 >= 1 else float("-inf")
+            l2 = nums2[cut2 - 1] if cut2 >= 1 else float("-inf")
+
+            r1 = nums1[cut1] if cut1 <= n1 - 1 else float("inf")
+            r2 = nums2[cut2] if cut2 <= n2 - 1 else float("inf")
+
             if l1 <= r2 and l2 <= r1:
-                if total % 2 == 0:
+                if (n1 + n2) % 2 == 0:
                     return (max(l1, l2) + min(r1, r2)) / 2
                 else:
-                    return min(r1, r2)
+                    return max(l1, l2)
             elif l1 > r2:
                 high = cut1 - 1
             else:
                 low = cut1 + 1
 
-
-s = Solution()
-print(s.findMedianSortedArrays([1, 3], [2]))
+    # TC: O(log(min(n1,n2)))
+    # SC: O(1)
