@@ -1,3 +1,4 @@
+# https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014
 class TrieNode:
     def __init__(self):
         self.children = {}

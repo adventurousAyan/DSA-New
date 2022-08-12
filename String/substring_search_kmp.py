@@ -1,6 +1,7 @@
 class Solution:
 
     # https://leetcode.com/problems/implement-strstr/
+    # https://github.com/mission-peace/interview/blob/master/src/com/interview/string/SubstringSearch.java
 
     def strStr(self, haystack: str, needle: str) -> int:
 
