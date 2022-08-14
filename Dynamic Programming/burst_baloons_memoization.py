@@ -1,3 +1,8 @@
+from typing import List
+
+# For each element if we delete any balloon, it might be dependent on other sub problems.
+# In this case, for each element of the array we have to consider it is the last element in array to be bursted and then
+# compute the cost
 class Solution:
     def maxCoins(self, nums: List[int]) -> int:
 
