@@ -5,9 +5,9 @@ from heapq import heappop, heappush
 # https://leetcode.com/problems/find-median-from-data-stream/
 
 
-# This approach is using two heaps. We will take maxheap and minheap both. Firsst we will put items in maxheap. If the next
+# This approach is using two heaps. We will take maxheap and minheap both. First we will put items in maxheap. If the next
 # item is less, put it in maxheap , else put it in minheap. Now if counts is even, we have to balance the heaps.
-# If count is odd, maxheap should always contain the top element, so maxheal items should be greater. Therefore if count is odd
+# If count is odd, maxheap should always contain the top element, so maxheap items should be greater. Therefore if count is odd
 # check, if maxheap contains more elements. If not, pop from minheap and put in maxheap
 # Also here we have used heapq as a priority queue implementation instead of PriorityQueue
 
