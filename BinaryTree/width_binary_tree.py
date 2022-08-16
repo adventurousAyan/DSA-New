@@ -18,12 +18,12 @@ class Solution:
         while not q.empty():
             n = q.qsize()
             ls = []
-            for i in range(n):
+            for _ in range(n):
                 idx, item = q.get()
                 ls.append(idx)
                 if item.left:
                     q.put((2*idx + 1,item.left))
                 if item.right:
                     q.put((2*idx + 2,item.right))
-                maxno = max(maxno, ls[-1]-ls[0]+1)
+            maxno = max(maxno, ls[-1]-ls[0]+1)
         return maxno
