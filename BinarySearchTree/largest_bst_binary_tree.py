@@ -1,30 +1,29 @@
+# User function Template for python3
+
+# https://practice.geeksforgeeks.org/problems/largest-bst/1
+
+
 class Solution:
     # Return the size of the largest sub-tree which is also a BST
     def largestBst(self, root):
         # code here
-        res = self.findLargest(root)
-        return res[1]
 
-    def findLargest(self, root):
-        if root is None:
-            return (1, 0, float("inf"), float("-inf"))
-        if root.left is None and root.right is None:
-            return (1, 1, root.data, root.data)
-        else:
-            val1 = self.findLargest(root.left)
-            val2 = self.findLargest(root.right)
-            if (
-                val2[0] == 1
-                and val1[0] == 1
-                and root.data > val1[3]
-                and root.data < val2[2]
-            ):
-                x = val1[2]
-                y = val2[3]
-                if x == float("inf"):
-                    x = root.data
-                if y == float("-inf"):
-                    y = root.data
-                return (1, val1[1] + val2[1] + 1, x, y)
+        def dfs(root):
+            if root is None:
+                return (True, 0, float("inf"), float("-inf"))
+            if root.left is None and root.right is None:
+                return (True, 1, root.data, root.data)
+            flaglh, sizelh, minlh, maxlh = dfs(root.left)
+            flagrh, sizerh, minrh, maxrh = dfs(root.right)
+
+            if flaglh and flagrh and root.data > maxlh and root.data < minrh:
+                if maxrh == float("-inf"):
+                    maxrh = root.data
+                if minlh == float("inf"):
+                    minlh = root.data
+                return (True, sizelh + sizerh + 1, minlh, maxrh)
             else:
-                return (0, max(val1[1], val2[1]), 0, 0)
+                return (False, max(sizelh, sizerh), 0, 0)
+
+        res = dfs(root)
+        return res[1]
