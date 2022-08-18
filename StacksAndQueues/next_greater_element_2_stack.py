@@ -10,9 +10,9 @@ class Solution:
         n = len(nums)
         for i in range((2 * n) - 1, -1, -1):
             circular_idx = i % n
-            while len(stack) > 0 and nums[circular_idx] >= stack[-1]:
+            while len(stack) > 0 and stack[-1] <= nums[circular_idx]:
                 stack.pop()
-            if len(stack) > 0 and nums[circular_idx] < stack[-1]:
+            if len(stack) > 0 and  stack[-1] > nums[circular_idx] :
                 new_list[circular_idx] = stack[-1]
             stack.append(nums[circular_idx])
 
