@@ -5,10 +5,14 @@
 #         self.left = left
 #         self.right = right
 
-# We can solve it using a brute force by first fding inorder, then sort inorder and then again doing a dfs and comparing the inorder values with the node values
+# We can solve it using a brute force by first finding inorder,
+# then sort inorder and then again doing a dfs and comparing the inorder values with the node values
 # Optimally we can solve this and we have to take three pointers, first, middle and last
-# Now the nodes can be adjacent or cannot be adjacent. So if nodes are adjacent, there will be only one violation and we can swap middle and first
+# Now the nodes can be adjacent or cannot be adjacent. So if nodes are adjacent,
+# there will be only one violation and we can swap middle and first
 # When nodes are not adjacent, there can be two violations, first and last and we donot need the middle
+
+# https://leetcode.com/problems/recover-binary-search-tree/
 class Solution:
     def recoverTree(self, root: Optional[TreeNode]) -> None:
         """

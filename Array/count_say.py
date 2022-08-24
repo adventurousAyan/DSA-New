@@ -1,4 +1,7 @@
 class Solution:
+
+    # https://leetcode.com/problems/count-and-say/
+
     def countAndSay(self, n: int) -> str:
 
         val = "1"

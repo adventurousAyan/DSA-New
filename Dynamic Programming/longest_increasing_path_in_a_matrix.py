@@ -44,7 +44,7 @@ class Solution:
         dp = [[-1] * n for _ in range(m)]
 
         # We need to loop through all the cells in order to
-        # find the longest incresing
+        # find the longest increasing
         maxi = float("-inf")
         for r in range(m):
             for c in range(n):
