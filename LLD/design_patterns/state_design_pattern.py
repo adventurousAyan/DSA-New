@@ -13,7 +13,7 @@ class Elevator:
         self._state = state
         self._state.elevator = self
 
-    def presentState(self):
+    def present_state(self):
         print(f"Elevator is in {type(self._state).__name__}")
 
     def push_up_button(self):
@@ -69,12 +69,12 @@ if __name__ == "__main__":
 
     elevator = Elevator(FirstFloor())
 
-    elevator.presentState()
+    elevator.present_state()
 
     elevator.push_up_button()
 
-    elevator.presentState()
+    elevator.present_state()
 
     elevator.push_down_button()
 
-    elevator.presentState()
+    elevator.present_state()
