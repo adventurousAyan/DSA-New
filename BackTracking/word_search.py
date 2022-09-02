@@ -19,7 +19,7 @@ class Solution:
             tmp = board[r][c]
             # Mark board[r][c] as None
             board[r][c] = None
-            # Formulate the cirections
+            # Formulate the directions
             directions = [(r - 1, c), (r + 1, c), (r, c - 1), (r, c + 1)]
             # Loop through each of the directions and if any pne path returns True, then return True from function
             # Increment the index
