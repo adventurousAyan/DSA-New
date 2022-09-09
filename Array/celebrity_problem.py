@@ -5,7 +5,7 @@ class Solution:
     def celebrity(self, M, n):
         # code here
         c = 0
-        for i in range(0, n):
+        for i in range(n):
             if M[c][i] == 1:
                 c = i
         for i in range(n):

@@ -1,4 +1,4 @@
-class Publisher:
+class Subscriber:
     def __init__(self, name) -> None:
         self.name = name
 
@@ -6,19 +6,19 @@ class Publisher:
         print(f"Got message: {message} for {self.name}")
 
 
-class Subsriber:
+class Publisher:
     def __init__(self) -> None:
         self.subscribers = set()
 
-    def register(self, publisher):
-        self.subscribers.add(publisher)
+    def register(self, sub):
+        self.subscribers.add(sub)
 
-    def unregister(self, publisher):
-        self.subscribers.discard(publisher)
+    def unregister(self, sub):
+        self.subscribers.discard(sub)
 
     def notify(self, message):
-        for pub in self.subscribers:
-            pub.update(message)
+        for sub in self.subscribers:
+            sub.update(message)
 
 
 if __name__ == "__main__":
