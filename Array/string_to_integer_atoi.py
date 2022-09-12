@@ -21,6 +21,7 @@ class Solution:
             else:
                 char_start = True
                 if s[i].isdigit():
+                    # Instead of thsi we could also do num = num*10+s[i]
                     su += s[i]
                 # Break as soon as the character found is not a digit
                 else:
