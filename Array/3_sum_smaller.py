@@ -1,6 +1,10 @@
+from typing import List
+
+
 class Solution:
 
     # https://leetcode.com/problems/3sum-smaller/submissions/
+
     def threeSumSmaller(self, nums: List[int], target: int) -> int:
 
         nums = sorted(nums)

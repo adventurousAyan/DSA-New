@@ -46,4 +46,4 @@ class Solution:
 arr = [7, 10, 4, 3, 20, 15]
 
 s = Solution()
-print(s.kthSmallest(arr, 0, 5, 3))
+print(s.kthSmallest(arr, 0, 5, 4))
