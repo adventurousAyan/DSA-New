@@ -40,7 +40,10 @@ class Solution:
 
 # The next step is to iterate through each character in the given string.
 # For each character, I access the dictionary to retrieve the list of words that start with that character.
-# I reset the value of the entry to an empty list and then iterate through the list of words I retrieved. If the word is only a single letter, then I conclude that we have successfully found a completed subsequence and increase our 'count' by one. Otherwise, I slice off the first character and add the sliced word back to the dictionary. This time, it is added to the entry for which the key is equal to the first letter of the sliced word.
+# I reset the value of the entry to an empty list and then iterate through the list of words I retrieved. If the word is only a single letter, 
+# then I conclude that we have successfully found a completed subsequence and increase our 'count' by one. Otherwise, 
+# I slice off the first character and add the sliced word back to the dictionary. This time, it is added to the entry for which the key is equal to 
+# the first letter of the sliced word.
 
 # This process continues until we have iterated through all characters in the string.
 # At the end, I return the count.
