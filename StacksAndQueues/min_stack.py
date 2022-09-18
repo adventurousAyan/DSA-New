@@ -22,7 +22,7 @@ class MinStack:
 
     def pop(self) -> None:
         
-        # If valur is less than minimum element, to get the earlier minimum element, we have to do 2*min_element-stack top
+        # If value is less than minimum element, to get the earlier minimum element, we have to do 2*min_element-stack top
         if self.stack[-1] < self.mini:
             self.mini = 2*self.mini-self.stack[-1]
             

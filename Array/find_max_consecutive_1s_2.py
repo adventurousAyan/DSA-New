@@ -34,7 +34,7 @@ class Solution:
     def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
 
         n = len(nums)
-        i, j = -1, 0
+        i, j = 0, 0
         k = 1
         maxi = float("-inf")
         cnt = 0
@@ -43,11 +43,11 @@ class Solution:
             if nums[j] == 0:
                 cnt += 1
 
-                while cnt > k:
-                    i += 1
+                if cnt > k:
+                    while nums[i] != 0:
+                        i += 1
                     if nums[i] == 0:
                         cnt -= 1
+                        i += 1
 
-            maxi = max(maxi, j - i)
-
-        return maxi
+            maxi = max(maxi, j - i + 1)

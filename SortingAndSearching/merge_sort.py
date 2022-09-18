@@ -11,7 +11,7 @@ class Solution:
     def merge_sort(self, start, end, arr):
 
         if start == end:
-            return arr[start : end + 1]
+            return arr[start]
 
         mid = start + (end - start) // 2
 
