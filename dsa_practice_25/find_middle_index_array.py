@@ -1,5 +1,8 @@
 class Solution:
     # https://leetcode.com/problems/find-the-middle-index-in-array/
+    # https://www.youtube.com/watch?v=u89i60lYx8U
+    # TC: O(n)
+    # SC: O(n)
     def findMiddleIndex(self, nums: List[int]) -> int:
         n = len(nums)
         pref_arr  = [0]*n
