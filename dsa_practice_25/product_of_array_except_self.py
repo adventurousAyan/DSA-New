@@ -1,5 +1,6 @@
 class Solution:
     # https://leetcode.com/problems/product-of-array-except-self/
+    # Intuition here - https://www.youtube.com/watch?v=bNvIQI2wAjk
     # TC: O(n)
     # SC: O(n)
     def productExceptSelf(self, nums: List[int]) -> List[int]:
