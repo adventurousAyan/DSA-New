@@ -3,6 +3,7 @@ class Solution:
       # This is based on symmetry pattern in binary search where we will divide the arrays in such a way
       # that left half will always be lesser than right half
       # Intuition in below video - https://www.youtube.com/watch?v=F9c7LpRZWVQ
+      # https://leetcode.com/problems/median-of-two-sorted-arrays/
         n1 = len(nums1)
         n2 = len(nums2)
         if n1>n2:
