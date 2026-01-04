@@ -10,6 +10,7 @@ class Solution:
                         cnt +=1
                 if cnt%3 != 0:
                     res ^= 1 << j
+            # This is for getting two's complement to check if signed bit is set
             if res >= 1 << 31:
                 res -= 1 << 32
             return res
